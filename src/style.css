@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  list-style: none;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --checkbox-gradient: linear-gradient(
+    90deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+.theme--dark {
+  --primary-color: hsl(0, 0%, 98%);
+  --secondary-color: hsl(235, 19%, 35%);
+  --ternary-color: hsl(233, 11%, 84%);
+  --primary-text-color: hsl(235, 19%, 35%);
+  --secondary-text-color: hsl(236, 9%, 61%);
+  --backdrop: url("../images/bg-desktop-light.jpg");
+  --todo-shadow: 0px 15px 117px -33px rgba(0, 0, 0, 0.15);
+  --background-color: hsl(235, 21%, 11%);
+}
+
+.theme--light {
+  --primary-color: hsl(0, 0%, 98%);
+  --secondary-color: hsl(235, 19%, 35%);
+  --ternary-color: hsl(233, 11%, 84%);
+  --primary-text-color: hsl(235, 19%, 35%);
+  --secondary-text-color: hsl(236, 9%, 61%);
+  --backdrop: url("../images/bg-desktop-light.jpg");
+  --todo-shadow: 0px 15px 117px -33px rgba(0, 0, 0, 0.15);
+  --background-color: hsl(0, 0%, 99%);
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.header,
+.main {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  color: white;
+  z-index: 0;
+}
+
+.backdrop {
+  background: var(--backdrop);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+}
+
+wc-list-container {
+  z-index: 200;
+}
+
+wc-header .theme-icon--dark {
+  display: none;
+}
+
+.theme--light wc-header .theme-icon--light {
+  display: none;
+}
