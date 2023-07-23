@@ -27,7 +27,7 @@ export default class ListContainer extends HTMLElement {
   }
 
   attributeChangedCallback(name: string, oldVal: string, newVal: string) {
-    if ((name = "data-list")) {
+    if (name === "data-list") {
       if (oldVal !== newVal) {
         this.renderList();
         const footer = this.shadowRoot?.querySelector("wc-footer") as Footer;
@@ -42,12 +42,12 @@ export default class ListContainer extends HTMLElement {
   }
 
   handleToggleStatus(status: "all" | "marked" | "not-marked") {
-    return (event: MouseEvent) => {
+    return (_event: MouseEvent) => {
       filterByStatus(status);
     };
   }
 
-  handleClearCompleted(event: MouseEvent) {
+  handleClearCompleted(_event: MouseEvent) {
     cleanCompleted();
   }
 
